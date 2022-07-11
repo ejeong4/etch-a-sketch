@@ -1,8 +1,10 @@
+const body = document.querySelector('body');
 const container = document.querySelector('.container');
+const btn = document.querySelector('.btn');
 let width = parseInt(getComputedStyle(container).width);
 let height = parseInt(getComputedStyle(container).height);
 
-const num = 16;
+const initialNum = gridSize();
 
 function makeDivs(num) {
     let area = num * num;
@@ -20,4 +22,11 @@ function makeDivs(num) {
     }
 }
 
-makeDivs(num);
+function gridSize() {
+    let answer = prompt("What size should the new grid be? (Type in a number 1-10)");
+    parseInt(answer);
+    return answer;
+}
+
+makeDivs(initialNum);
+btn.addEventListener('click', gridSize);

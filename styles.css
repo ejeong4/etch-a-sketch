@@ -5,7 +5,7 @@ body {
 }
 
 .div {
-    border: 1px solid gray;
+    border: 2px solid black;
 }
 
 .div-hover {
@@ -25,4 +25,17 @@ body {
     width: 500px;
     height: 500px;
     padding: none;
+}
+
+.form {
+    height: 100px;
+    width: 280px;
+    background-color: black;
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 350px;
 }

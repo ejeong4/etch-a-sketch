@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.div {
+    border: 1px solid gray;
+}
+
+.div-hover {
+    background-color: black;
+}
+
+.btn {
+    margin: 30px auto;
+}
+
+.container {
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 16;
+    grid-template-rows: auto;
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    padding: none;
+}

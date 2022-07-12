@@ -1,7 +1,7 @@
 //Initialize Variables
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
-//const btn = document.querySelector('.btn');
+
 const colorBtns = document.querySelector('color-btns');
 const sizeBtns = document.querySelector('size-btns');
 
@@ -45,16 +45,10 @@ function makeDivs(num, hoverClass) {
     }
 }
 
-//Prompt and make new grid size
-/*function gridSize() {
-    let answer = prompt("Enter a number between 1-100:");
-    parseInt(answer);
-    makeDivs(answer);
-}*/
-
+//Change color theme
 function changeColor(color) {
     let array = [container, big, medium, small];
-
+    makeDivs(16, `set-${color}-background`);
     for (const div of array) {
         for (i = 0; i < div.classList.length; i++) {
             const className = div.classList[i];
@@ -62,20 +56,16 @@ function changeColor(color) {
                 div.classList.remove(className);
             }
         }
-
         if (div !== container) {
             div.classList.add(`set-${color}-background`);
         } else {
             div.classList.add(`set-${color}-border`);
         }
     }
-
-    makeDivs(16, `set-${color}-background`);
 }
 
 //Call functions
 makeDivs(16, 'set-red-background');
-//btn.addEventListener('click', gridSize);
 yellow.addEventListener('click', () => changeColor('yellow'));
 red.addEventListener('click', () => changeColor('red'));
 blue.addEventListener('click', () => changeColor('blue'));

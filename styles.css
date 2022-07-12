@@ -5,10 +5,23 @@ body {
     background-color: black;
 }
 
+.container {
+    margin: 30px 0;
+    display: grid;
+    width: 500px;
+    height: 500px;
+}
+
 .color-btns {
     display: flex;
     flex-direction: column;
     margin: auto 0 auto auto;
+}
+
+.size-btns {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto auto 0;
 }
 
 .red {
@@ -19,25 +32,19 @@ body {
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: rgb(235, 235, 10);
     height: 32px;
     width: 32px;
     margin: 40px;
-    border: 2px solid yellow;
+    border: none;
 }
 
 .blue {
-    background-color: cyan;
+    background-color: rgb(14, 233, 233);
     height: 32px;
     width: 32px;
     margin: 40px;
-    border: 2px solid cyan;
-}
-
-.size-btns {
-    display: flex;
-    flex-direction: column;
-    margin: auto auto auto 0;
+    border: none;
 }
 
 .big {
@@ -64,17 +71,6 @@ body {
     border: none;
 }
 
-.btn {
-    margin: 30px auto;
-}
-
-.container {
-    margin: 30px 0;
-    display: grid;
-    width: 500px;
-    height: 500px;
-}
-
 .set-red-background {
     background-color: rgb(231, 21, 21);
 }
@@ -84,30 +80,17 @@ body {
 }
 
 .set-yellow-border {
-    border: 2px solid yellow;
+    border: 2px solid rgb(235, 235, 10);
 }
 
 .set-yellow-background {
-    background-color: yellow;
+    background-color: rgb(235, 235, 10);
 }
 
 .set-blue-background {
-    background-color: cyan;
+    background-color: rgb(14, 233, 233);
 }
 
 .set-blue-border {
-    border: 2px solid cyan;
-}
-
-.form {
-    height: 100px;
-    width: 280px;
-    background-color: black;
-    color: white;
-    margin: auto;
-    text-align: center;
-    padding: 50px 20px 0 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    bottom: 350px;
+    border: 2px solid rgb(14, 233, 233);
 }

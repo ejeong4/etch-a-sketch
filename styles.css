@@ -1,15 +1,67 @@
 body {
     display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.div {
-    border: 2px solid black;
-}
-
-.div-hover {
+    flex-direction: row;
+    margin-top: 92px;
     background-color: black;
+}
+
+.color-btns {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 auto auto;
+}
+
+.red {
+    background-color: rgb(231, 21, 21);
+    height: 32px;
+    width: 32px;
+    margin: 40px;
+}
+
+.yellow {
+    background-color: yellow;
+    height: 32px;
+    width: 32px;
+    margin: 40px;
+    border: 2px solid yellow;
+}
+
+.blue {
+    background-color: cyan;
+    height: 32px;
+    width: 32px;
+    margin: 40px;
+    border: 2px solid cyan;
+}
+
+.size-btns {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto auto 0;
+}
+
+.big {
+    height: 32px;
+    width: 32px;
+    margin: 40px;
+    padding: 0;
+    border: none;
+}
+
+.medium {
+    height: 22px;
+    width: 22px;
+    margin: 40px;
+    padding: 0;
+    border: none;
+}
+
+.small {
+    height: 12px;
+    width: 12px;
+    margin: 40px;
+    padding: 0;
+    border: none;
 }
 
 .btn {
@@ -17,14 +69,34 @@ body {
 }
 
 .container {
-    margin: 30px auto;
+    margin: 30px 0;
     display: grid;
-    grid-template-columns: 16;
-    grid-template-rows: auto;
-    border: 2px solid black;
     width: 500px;
     height: 500px;
-    padding: none;
+}
+
+.set-red-background {
+    background-color: rgb(231, 21, 21);
+}
+
+.set-red-border {
+    border: 2px solid rgb(231, 21, 21);
+}
+
+.set-yellow-border {
+    border: 2px solid yellow;
+}
+
+.set-yellow-background {
+    background-color: yellow;
+}
+
+.set-blue-background {
+    background-color: cyan;
+}
+
+.set-blue-border {
+    border: 2px solid cyan;
 }
 
 .form {

@@ -11,8 +11,8 @@ const medium = document.querySelector('.medium');
 const small = document.querySelector('.small');
 
 const bigSize = 16;
-const mediumSize = 50;
-const smallSize = 80;
+const mediumSize = 30;
+const smallSize = 60;
 
 
 //Get width and height of grid
@@ -27,7 +27,7 @@ function removeChildren() {
 }
 
 //Make any number of divs in container
-function makeDivs(num, hoverClass) {
+function makeDivs(num, color) {
     removeChildren();
 
     let area = num * num;
@@ -41,14 +41,14 @@ function makeDivs(num, hoverClass) {
         let div = document.createElement('div')
         div.classList.add('div');
         container.appendChild(div);
-        div.addEventListener('mouseover', () => div.classList.add(hoverClass));
+        div.addEventListener('mouseover', () => div.classList.add(`set-${color}-background`));
     }
 }
 
 //Change color theme
 function changeColor(color) {
     let array = [container, big, medium, small];
-    makeDivs(bigSize, `set-${color}-background`);
+    makeDivs(bigSize, color);
     for (const div of array) {
         for (i = 0; i < div.classList.length; i++) {
             const className = div.classList[i];
@@ -64,11 +64,16 @@ function changeColor(color) {
     }
 }
 
-//Call functions
-makeDivs(bigSize, 'set-red-background');
-yellow.addEventListener('click', () => changeColor('yellow'));
-red.addEventListener('click', () => changeColor('red'));
-blue.addEventListener('click', () => changeColor('blue'));
+function setTheme(color) {
+    console.log(color);
+    changeColor(color);
+    big.addEventListener('click', () => console.log(bigSize, color));
+    medium.addEventListener('click', () => makeDivs(mediumSize, color));
+    small.addEventListener('click', () => makeDivs(smallSize, color));
+}
 
-medium.addEventListener('click', () => makeDivs(mediumSize, 'set-red-background'));
-small.addEventListener('click', () => makeDivs(smallSize, 'set-red-background'));
+//Call functions
+setTheme('red');
+yellow.addEventListener('click', () => setTheme('yellow'));
+red.addEventListener('click', () => setTheme('red'));
+blue.addEventListener('click', () => setTheme('blue'));

@@ -2,9 +2,6 @@
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
 
-const colorBtns = document.querySelector('color-btns');
-const sizeBtns = document.querySelector('size-btns');
-
 const yellow = document.querySelector('.yellow');
 const red = document.querySelector('.red');
 const blue = document.querySelector('.blue');
@@ -12,7 +9,10 @@ const blue = document.querySelector('.blue');
 const big = document.querySelector('.big');
 const medium = document.querySelector('.medium');
 const small = document.querySelector('.small');
-const div = document.querySelector('div .div-hover');
+
+const bigSize = 16;
+const mediumSize = 50;
+const smallSize = 80;
 
 
 //Get width and height of grid
@@ -48,7 +48,7 @@ function makeDivs(num, hoverClass) {
 //Change color theme
 function changeColor(color) {
     let array = [container, big, medium, small];
-    makeDivs(16, `set-${color}-background`);
+    makeDivs(bigSize, `set-${color}-background`);
     for (const div of array) {
         for (i = 0; i < div.classList.length; i++) {
             const className = div.classList[i];
@@ -65,7 +65,10 @@ function changeColor(color) {
 }
 
 //Call functions
-makeDivs(16, 'set-red-background');
+makeDivs(bigSize, 'set-red-background');
 yellow.addEventListener('click', () => changeColor('yellow'));
 red.addEventListener('click', () => changeColor('red'));
 blue.addEventListener('click', () => changeColor('blue'));
+
+medium.addEventListener('click', () => makeDivs(mediumSize, 'set-red-background'));
+small.addEventListener('click', () => makeDivs(smallSize, 'set-red-background'));

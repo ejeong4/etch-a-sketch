@@ -14,11 +14,6 @@ const bigSize = 16;
 const mediumSize = 30;
 const smallSize = 60;
 
-
-//Get width and height of grid
-let width = parseInt(getComputedStyle(container).width);
-let height = parseInt(getComputedStyle(container).height);
-
 //Remove children elements
 function removeChildren() {
     while (container.firstChild) {
@@ -27,12 +22,13 @@ function removeChildren() {
 }
 
 //Make any number of divs in container
-function makeDivs(num, color) {
+function makeDivs(num, theme) {
     removeChildren();
 
     let area = num * num;
-    let divWidth = `${width / num}px `;
-    let divHeight = `${height / num}px `;
+
+    let divWidth = `${500 / num}px `;
+    let divHeight = `${500 / num}px `;
 
     container.style.gridTemplateRows = divWidth.repeat(num);
     container.style.gridTemplateColumns = divHeight.repeat(num);
@@ -41,7 +37,7 @@ function makeDivs(num, color) {
         let div = document.createElement('div')
         div.classList.add('div');
         container.appendChild(div);
-        div.addEventListener('mouseover', () => div.classList.add(`set-${color}-background`));
+        div.addEventListener('mouseover', () => div.classList.add(`set-${theme}-background`));
     }
 }
 
@@ -49,27 +45,27 @@ function makeDivs(num, color) {
 function changeColor(color) {
     let array = [container, big, medium, small];
     makeDivs(bigSize, color);
-    for (const div of array) {
-        for (i = 0; i < div.classList.length; i++) {
-            const className = div.classList[i];
+    for (const content of array) {
+        for (i = 0; i < content.classList.length; i++) {
+            const className = content.classList[i];
             if (className.startsWith('set')) {
-                div.classList.remove(className);
+                content.classList.remove(className);
             }
         }
-        if (div !== container) {
-            div.classList.add(`set-${color}-background`);
+        if (content !== container) {
+            content.classList.add(`set-${color}-background`);
         } else {
-            div.classList.add(`set-${color}-border`);
+            content.classList.add(`set-${color}-border`);
         }
     }
 }
 
-function setTheme(color) {
-    console.log(color);
-    changeColor(color);
-    big.addEventListener('click', () => console.log(bigSize, color));
-    medium.addEventListener('click', () => makeDivs(mediumSize, color));
-    small.addEventListener('click', () => makeDivs(smallSize, color));
+//Match size buttons to set color
+function setTheme(newColor) {
+    changeColor(newColor);
+    big.addEventListener('click', () => makeDivs(bigSize, newColor));
+    medium.addEventListener('click', () => makeDivs(mediumSize, newColor));
+    small.addEventListener('click', () => makeDivs(smallSize, newColor));
 }
 
 //Call functions

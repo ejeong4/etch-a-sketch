@@ -1,12 +1,23 @@
+//Initialize Variables
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
 const btn = document.querySelector('.btn');
+
+//Get width and height of grid
 let width = parseInt(getComputedStyle(container).width);
 let height = parseInt(getComputedStyle(container).height);
 
-const initialNum = gridSize();
+//Remove children elements
+function removeChildren() {
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+}
 
+//Make any number of divs in container
 function makeDivs(num) {
+    removeChildren();
+
     let area = num * num;
     let divWidth = `${width / num}px `;
     let divHeight = `${height / num}px `;
@@ -22,11 +33,13 @@ function makeDivs(num) {
     }
 }
 
+//Prompt and make new grid size
 function gridSize() {
     let answer = prompt("What size should the new grid be? (Type in a number 1-10)");
     parseInt(answer);
-    return answer;
+    makeDivs(answer);
 }
 
-makeDivs(initialNum);
+//Call functions
+makeDivs(16);
 btn.addEventListener('click', gridSize);

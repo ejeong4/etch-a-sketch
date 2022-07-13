@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'cochin';
+    src: url(Cochin.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.h1 {
+    font-family: 'cochin', serif;
+    font-style: italic;
+    font-size: 128;
+    color: rgb(216, 29, 29);
+}

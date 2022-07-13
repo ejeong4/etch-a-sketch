@@ -54,7 +54,7 @@ function changeColor(color) {
         }
         if (content !== container) {
             content.classList.add(`set-${color}-background`);
-        } else {
+        } else if (content == container) {
             content.classList.add(`set-${color}-border`);
         }
     }
@@ -68,8 +68,20 @@ function setTheme(newColor) {
     small.addEventListener('click', () => makeDivs(smallSize, newColor));
 }
 
+//Add Hover effect
+function hover() {
+    let buttonArray = [red, yellow, blue, big, small, medium];
+    for (const button of buttonArray) {
+        button.addEventListener('mouseover', () => button.classList.add('hover'));
+        button.addEventListener('mouseout', () => button.classList.remove('hover'));
+        button.addEventListener('mousedown', () => button.classList.add('click'));
+        button.addEventListener('mouseup', () => button.classList.remove('click'));
+    }
+}
+
 //Call functions
 setTheme('red');
 yellow.addEventListener('click', () => setTheme('yellow'));
 red.addEventListener('click', () => setTheme('red'));
 blue.addEventListener('click', () => setTheme('blue'));
+hover();

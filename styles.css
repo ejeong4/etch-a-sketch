@@ -21,18 +21,29 @@ body {
 .size-btns {
     display: flex;
     flex-direction: column;
-    margin: auto auto auto 0;
+    margin: auto auto auto 40px;
+}
+
+.color-btns .hover,
+.size-btns .hover {
+    border: 5px solid rgb(255, 233, 207);
+}
+
+.color-btns .click,
+.size-btns .click {
+    background-color: rgb(255, 233, 207);
 }
 
 .red {
-    background-color: rgb(231, 21, 21);
+    background-color: rgb(216, 29, 29);
     height: 32px;
     width: 32px;
     margin: 40px;
+    border: none;
 }
 
 .yellow {
-    background-color: rgb(235, 235, 10);
+    background-color: rgb(199, 182, 28);
     height: 32px;
     width: 32px;
     margin: 40px;
@@ -40,7 +51,7 @@ body {
 }
 
 .blue {
-    background-color: rgb(14, 233, 233);
+    background-color: rgb(23, 207, 207);
     height: 32px;
     width: 32px;
     margin: 40px;
@@ -50,7 +61,7 @@ body {
 .big {
     height: 32px;
     width: 32px;
-    margin: 40px;
+    margin: 40px auto;
     padding: 0;
     border: none;
 }
@@ -58,7 +69,7 @@ body {
 .medium {
     height: 22px;
     width: 22px;
-    margin: 40px;
+    margin: 40px auto;
     padding: 0;
     border: none;
 }
@@ -66,31 +77,31 @@ body {
 .small {
     height: 12px;
     width: 12px;
-    margin: 40px;
+    margin: 40px auto;
     padding: 0;
     border: none;
 }
 
 .set-red-background {
-    background-color: rgb(231, 21, 21);
+    background-color: rgb(216, 29, 29);
 }
 
 .set-red-border {
-    border: 2px solid rgb(231, 21, 21);
+    border: 2px solid rgb(216, 29, 29);
 }
 
 .set-yellow-border {
-    border: 2px solid rgb(235, 235, 10);
+    border: 2px solid rgb(199, 182, 28);
 }
 
 .set-yellow-background {
-    background-color: rgb(235, 235, 10);
+    background-color: rgb(199, 182, 28);
 }
 
 .set-blue-background {
-    background-color: rgb(14, 233, 233);
+    background-color: rgb(23, 207, 207);
 }
 
 .set-blue-border {
-    border: 2px solid rgb(14, 233, 233);
+    border: 2px solid rgb(23, 207, 207);
 }

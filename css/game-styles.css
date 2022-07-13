@@ -1,8 +1,18 @@
+@keyframes opacity-change {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
 body {
     display: flex;
     flex-direction: row;
     margin-top: 92px;
     background-color: black;
+    animation: opacity-change 1s;
 }
 
 .container {
@@ -84,6 +94,7 @@ body {
 
 .set-red-background {
     background-color: rgb(216, 29, 29);
+    animation: opacity-change 0.5s;
 }
 
 .set-red-border {
@@ -96,10 +107,12 @@ body {
 
 .set-yellow-background {
     background-color: rgb(199, 182, 28);
+    animation: opacity-change 0.5s;
 }
 
 .set-blue-background {
     background-color: rgb(23, 207, 207);
+    animation: opacity-change 0.5s;
 }
 
 .set-blue-border {
